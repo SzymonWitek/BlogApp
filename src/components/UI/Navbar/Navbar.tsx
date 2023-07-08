@@ -1,3 +1,4 @@
+import { SearchPost } from '@/components/SearchPost';
 import Link from 'next/link';
 
 const LINKS = [
@@ -11,13 +12,16 @@ function Navbar() {
       <Link href="/">
         <h2 className="text-primary">UI Library</h2>
       </Link>
-      <ul className="flex">
-        {LINKS.map(({ href, name }) => (
-          <Link className="ml-7" href={href}>
-            <li className="text-xl font-medium">{name}</li>
-          </Link>
-        ))}
-      </ul>
+      <div className="flex items-center">
+        <SearchPost />
+        <ul className="flex">
+          {LINKS.map(({ href, name }) => (
+            <Link className="ml-7" href={href}>
+              <li className="text-xl font-medium">{name}</li>
+            </Link>
+          ))}
+        </ul>
+      </div>
     </nav>
   );
 }

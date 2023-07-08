@@ -1,12 +1,23 @@
 'use client';
+import { useState, useCallback, useEffect } from 'react';
 import { AnimatePresence } from 'framer-motion';
-import { useState, useCallback } from 'react';
 import { FaMagnifyingGlass } from 'react-icons/fa6';
 import { AppearAnimation, Input } from '../UI';
-import { debounce, stubTrue, throttle } from 'lodash';
+import { throttle } from 'lodash';
 
 function SearchPost() {
+  const [searchVal, setSearchVal] = useState('');
   const [isOpen, setOpen] = useState(false);
+
+  useEffect(
+    function resetValue() {
+      if (isOpen) return;
+
+      setSearchVal('');
+    },
+    [isOpen]
+  );
+
   const toggleOpen = () => {
     setOpen((prevState) => !prevState);
   };
@@ -17,7 +28,13 @@ function SearchPost() {
       <AnimatePresence>
         {isOpen && (
           <AppearAnimation>
-            <Input type="text" className="mr-6" placeholder="Search..." />
+            <Input
+              value={searchVal}
+              setValue={setSearchVal}
+              type="text"
+              className="mr-6"
+              placeholder="Search..."
+            />
           </AppearAnimation>
         )}
       </AnimatePresence>

@@ -2,26 +2,72 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+p,body{
+  line-height: 1.25;
+  font-size:16px ;
+}
+h1{
+  line-height: 1.25;
+  font-size: 32px;
+}
+h2{
+  line-height: 1.15384615;
+  font-size: 26px;
+}
+h3{
+  line-height:1.13636364 ;
+  font-size:22px;
+}
+h4{
+  line-height: 1.111111111;
+  font-size: 18px;
+}
+blockquote{
+  line-height:1.375 ;
+  font-size: 20px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+@media(min-width:768px){
+p,body{
+  line-height: 1.375;
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+h1{
+  line-height: 1.125;
+  font-size: 40px;
+}
+h2{
+  line-height: 1.25;
+  font-size: 32px;
+}
+h3{
+  line-height: 1.25;
+  font-size: 24px;
+}
+h4{
+  line-height: 1.222222222;
+}
+blockquote{
+  line-height: 1.45833333;
+}
+}
+@media(min-width:1024px){
+p,body{
+  font-size: 18px;
+}
+h1{
+  font-size: 48px;
+}
+h2{
+  font-size: 36px;
+}
+h3{
+  font-size: 28px;
+}
+h4{
+  font-size: 18px;
+}
+blockquote{
+  font-size: 24px;
+}
 }

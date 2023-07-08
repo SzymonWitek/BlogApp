@@ -13,8 +13,8 @@ function Navbar() {
       </Link>
       <ul className="flex">
         {LINKS.map(({ href, name }) => (
-          <Link href={href}>
-            <li className="text-xl font-medium ml-7">{name}</li>
+          <Link className="ml-7" href={href}>
+            <li className="text-xl font-medium">{name}</li>
           </Link>
         ))}
       </ul>

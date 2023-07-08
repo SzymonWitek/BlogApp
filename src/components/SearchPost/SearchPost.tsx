@@ -1,14 +1,16 @@
 'use client';
-import { AnimatePresence, motion } from 'framer-motion';
-import { useState } from 'react';
+import { AnimatePresence } from 'framer-motion';
+import { useState, useCallback } from 'react';
 import { FaMagnifyingGlass } from 'react-icons/fa6';
 import { AppearAnimation, Input } from '../UI';
+import { debounce, stubTrue, throttle } from 'lodash';
 
 function SearchPost() {
   const [isOpen, setOpen] = useState(false);
   const toggleOpen = () => {
     setOpen((prevState) => !prevState);
   };
+  const throttledOpen = useCallback(throttle(toggleOpen, 300), []);
 
   return (
     <div className="flex justify-center ">
@@ -19,7 +21,7 @@ function SearchPost() {
           </AppearAnimation>
         )}
       </AnimatePresence>
-      <button onClick={toggleOpen}>
+      <button onClick={throttledOpen}>
         <FaMagnifyingGlass className="h-5 w-5 text-gray-400 hover:text-textPrimary transition-all" />
       </button>
     </div>

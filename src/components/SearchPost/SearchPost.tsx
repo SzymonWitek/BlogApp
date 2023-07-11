@@ -1,5 +1,6 @@
 'use client';
 import { useState, useCallback, useEffect } from 'react';
+import { useToggle } from '@/hooks/useToggle';
 import { AnimatePresence } from 'framer-motion';
 import { FaMagnifyingGlass } from 'react-icons/fa6';
 import { AppearAnimation, Input } from '../UI';
@@ -7,8 +8,7 @@ import { throttle } from 'lodash';
 
 function SearchPost() {
   const [searchVal, setSearchVal] = useState('');
-  const [isOpen, setOpen] = useState(false);
-
+  const { isOn: isOpen, toggle: toggleOpen } = useToggle();
   useEffect(
     function resetValue() {
       if (isOpen) return;
@@ -18,9 +18,6 @@ function SearchPost() {
     [isOpen]
   );
 
-  const toggleOpen = () => {
-    setOpen((prevState) => !prevState);
-  };
   const throttledOpen = useCallback(throttle(toggleOpen, 300), []);
 
   return (

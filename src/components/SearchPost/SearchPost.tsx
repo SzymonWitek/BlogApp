@@ -1,10 +1,10 @@
 'use client';
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useToggle } from '@/hooks/useToggle';
 import { AnimatePresence } from 'framer-motion';
 import { FaMagnifyingGlass } from 'react-icons/fa6';
 import { AppearAnimation, Input } from '../UI';
-import { throttle } from 'lodash';
+import { useThrottle } from '@/hooks/useThrottle';
 
 function SearchPost() {
   const [searchVal, setSearchVal] = useState('');
@@ -18,7 +18,7 @@ function SearchPost() {
     [isOpen]
   );
 
-  const throttledOpen = useCallback(throttle(toggleOpen, 300), []);
+  const throttledOpen = useThrottle<void>(toggleOpen, 300);
 
   return (
     <div className="flex justify-center ">

@@ -1,7 +1,8 @@
 export interface PostMetadata {
   title: string;
   subtitle: string;
-  date: string | Date;
+  date: string;
   slug: string;
   image: string;
+  avgReadMinutes: number;
 }

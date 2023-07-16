@@ -1,6 +1,6 @@
 import { format } from 'date-fns';
 
-const DEFAULT_FORMAT_DATE = 'MMMM-do-yy';
+const DEFAULT_FORMAT_DATE = 'MMMM-do-yyyy';
 
 export function formatDate(
   date: Date | string,

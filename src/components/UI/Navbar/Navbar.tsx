@@ -16,7 +16,7 @@ function Navbar() {
         <SearchPost />
         <ul className="flex">
           {LINKS.map(({ href, name }) => (
-            <Link className="ml-7" href={href}>
+            <Link className="ml-7" href={href} key={href}>
               <li className="text-xl font-medium text-gray-400 hover:text-textPrimary transition-all">
                 {name}
               </li>

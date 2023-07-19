@@ -4,5 +4,4 @@ export interface PostMetadata {
   date: string;
   slug: string;
   image: string;
-  avgReadMinutes: number;
 }

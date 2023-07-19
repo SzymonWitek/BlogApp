@@ -4,10 +4,12 @@ import matter from 'gray-matter';
 import type { PostMetadata } from '@/common/interfaces';
 import { POSTS_SOURCE } from '@/common/constants';
 import { formatDate } from '@/utils/formatDate';
+import { getAverageReadTime } from '@/utils/getAverageReadTime';
 
-type PostMetadataFn = () => PostMetadata[];
-
-const AVERAGE_WORDS_PER_MINUTE_SPEED = 250;
+interface PostDetails extends PostMetadata {
+  avgReadMinutes: number;
+}
+type PostMetadataFn = () => PostDetails[];
 
 export const getPostsMetadata: PostMetadataFn = () => {
   const files = readdirSync(POSTS_SOURCE);
@@ -17,23 +19,15 @@ export const getPostsMetadata: PostMetadataFn = () => {
     return fileName.replace('.md', '');
   };
 
-  const getFileWordsCount = (fileContent: string) => {
-    return fileContent.split(' ').length;
-  };
-
-  const getAverageReadTime = (textWords: number) => {
-    return Math.floor(textWords / AVERAGE_WORDS_PER_MINUTE_SPEED);
-  };
-
   const postsMetadata = markdownPosts.map((fileName) => {
     const filePath = `${POSTS_SOURCE}${fileName}`;
     const fileContent = readFileSync(filePath, 'utf8');
     const fileMatter = matter(fileContent);
     const {
-      data: { title, date, subtitle, image }
+      data: { title, date, subtitle, image },
+      content
     } = fileMatter;
-    const fileWords = getFileWordsCount(fileContent);
-    const avgReadMinutes = getAverageReadTime(fileWords);
+    const avgReadMinutes = getAverageReadTime(content);
 
     return {
       title: title as string,

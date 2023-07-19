@@ -4,11 +4,12 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 
 import type { PostMetadata } from '@/common/interfaces';
+import { getPostsMetadata } from '../utils/getPostsMetadata';
 import { ArticleDetails } from '../ArticleDetails';
 import Link from 'next/link';
 
 interface ArticleCardProps {
-  data: PostMetadata;
+  data: ReturnType<typeof getPostsMetadata>[number];
   isOdd: boolean;
 }
 

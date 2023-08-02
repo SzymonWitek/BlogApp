@@ -10,7 +10,7 @@ function Navbar() {
   return (
     <nav className="px-[5vw] py-9 lg:py-12 flex justify-between items-center">
       <Link href="/">
-        <h2 className="text-primary">UI Library</h2>
+        <h2 className="text-gray-300 tracking-wide font-medium">DevBlog</h2>
       </Link>
       <div className="flex items-center">
         <SearchPost />

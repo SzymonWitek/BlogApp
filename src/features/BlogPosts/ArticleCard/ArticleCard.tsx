@@ -23,15 +23,13 @@ function ArticleCard({ data, isOdd }: ArticleCardProps) {
 				onMouseEnter={() => setHovered(true)}
 				onMouseLeave={() => {
 					setHovered(false);
-				}}
-			>
+				}}>
 				<div
 					className={`rounded-md overflow-hidden ${
 						isHovered
 							? `outline outline-offset-2 outline-2 ${outlineColor}`
 							: ''
-					}`}
-				>
+					}`}>
 					<Image
 						src={`/images/${data.image}`}
 						alt={data.title}

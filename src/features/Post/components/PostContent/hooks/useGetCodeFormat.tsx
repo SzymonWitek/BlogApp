@@ -32,8 +32,7 @@ export const useGetCodeFormat = (): Components => {
 							bottom: 0,
 							fontStyle: 'italic',
 							fontSize: '13px',
-						}}
-					>
+						}}>
 						{match[1]}
 					</div>
 					<CopyBtn textToCopy={code} />

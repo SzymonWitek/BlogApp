@@ -46,8 +46,7 @@ function PostContent({ content }: PostContentProps) {
 		<div className="w-[1200px] py-2">
 			<ReactMarkdown
 				components={componentsFormat}
-				remarkPlugins={[remarkGfm, remarkUnwrapImages]}
-			>
+				remarkPlugins={[remarkGfm, remarkUnwrapImages]}>
 				{content}
 			</ReactMarkdown>
 		</div>

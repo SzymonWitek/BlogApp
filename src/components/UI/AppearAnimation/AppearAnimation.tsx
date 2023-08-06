@@ -16,8 +16,7 @@ function AppearAnimation({ children, ...restProps }: AppearAnimationProps) {
 			initial={{ opacity: 0, right: '20px' }}
 			animate={{ opacity: 1, right: '0px' }}
 			exit={{ opacity: 0, right: '20px' }}
-			{...restProps}
-		>
+			{...restProps}>
 			{children}
 		</motion.div>
 	);

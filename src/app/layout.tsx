@@ -5,30 +5,30 @@ import { Navbar } from '@/components/UI';
 import './globals.css';
 
 const roboto = Roboto({
-  weight: ['300', '400', '500', '700', '900'],
-  subsets: ['latin'],
-  display: 'swap',
-  style: ['normal', 'italic']
+	weight: ['300', '400', '500', '700', '900'],
+	subsets: ['latin'],
+	display: 'swap',
+	style: ['normal', 'italic'],
 });
 
 export const metadata: Metadata = {
-  title: 'Documentation blog',
-  description: 'Documentation blog for ui design system'
+	title: 'Documentation blog',
+	description: 'Documentation blog for ui design system',
 };
 
 export default function RootLayout({
-  children
+	children,
 }: {
-  children: React.ReactNode;
+	children: React.ReactNode;
 }) {
-  return (
-    <html lang="en">
-      <body
-        className={`${roboto.className} text-slate-500 min-h-screen bg-bgPrimary`}
-      >
-        <Navbar />
-        {children}
-      </body>
-    </html>
-  );
+	return (
+		<html lang="en">
+			<body
+				className={`${roboto.className} text-slate-500 min-h-screen bg-bgPrimary`}
+			>
+				<Navbar />
+				{children}
+			</body>
+		</html>
+	);
 }

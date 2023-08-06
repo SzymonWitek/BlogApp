@@ -19,7 +19,7 @@ function ArticleDetails({ date, avgReadTime, title }: ArticleDetailsProps) {
   return (
     <div>
       <p className="pt-4 pb-2 text-xl font-medium text-slate-500">{`${month} ${day}, ${year} - ${avgReadTime} min read`}</p>
-      <h4 className="text-xl font-medium md:text-3xl">{title}</h4>
+      <h4 className="text-xl font-medium md:text-3xl text-white">{title}</h4>
     </div>
   );
 }

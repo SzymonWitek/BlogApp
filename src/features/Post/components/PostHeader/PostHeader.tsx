@@ -11,8 +11,8 @@ function PostHeader({ data: { title, date }, content }: PostHeaderProps) {
   const avgReadTime = getAverageReadTime(content);
   return (
     <div className="flex flex-col  items-center">
-      <div>
-        <h2 className="text-2xl font-medium md:text-4xl tracking-wider">
+      <div className="pb-1">
+        <h2 className="text-2xl font-medium md:text-4xl tracking-wider text-textPrimary">
           {title}
         </h2>
         <p className="py-2 text-lg font-medium text-slate-500">

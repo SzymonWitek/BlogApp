@@ -5,6 +5,7 @@ import ReactMarkdown from 'react-markdown';
 import { PostHeader } from './components/PostHeader';
 import type { PostMetadata } from '@/common/interfaces';
 import Image from 'next/image';
+import { PostContent } from './components/PostContent';
 
 interface PostProps {
   title: string;
@@ -23,7 +24,7 @@ function Post({ title }: PostProps) {
   const { data, content } = getPostDetails(title);
 
   return (
-    <div className="px-[10vw] flex flex-col items-center">
+    <div className="px-[10vw] flex flex-col items-center w-[1300]">
       <PostHeader data={data} content={content} />
       <div>
         <Image
@@ -34,9 +35,7 @@ function Post({ title }: PostProps) {
           className="w-full h-[750px] pt-4 rounded-3xl"
         />
       </div>
-      <article className="max-w-7xl mx-auto pt-[10vh]">
-        <ReactMarkdown>{content}</ReactMarkdown>
-      </article>
+      <PostContent content={content} />
     </div>
   );
 }

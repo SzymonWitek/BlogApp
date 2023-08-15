@@ -1,22 +1,28 @@
 'use client';
+// import { useToggle } from '@/hooks/useToggle';
+// import { useEffect } from 'react';
+import { AppearAnimation } from '@/components/UI';
 import { useThrottle } from '@/hooks/useThrottle';
 import { useToggle } from '@/hooks/useToggle';
 import { AnimatePresence } from 'framer-motion';
-import { useEffect, useState } from 'react';
 import { FaMagnifyingGlass } from 'react-icons/fa6';
-import { AppearAnimation, Input } from '../UI';
+import { getPostsMetadata } from '../BlogPosts/utils/getPostsMetadata';
+import { SearchResults } from './components/SearchResults';
 
-function SearchPost() {
-	const [searchVal, setSearchVal] = useState('');
+interface SearchPostProps {
+	posts: ReturnType<typeof getPostsMetadata>;
+}
+
+export function SearchPost({ posts }: SearchPostProps) {
 	const { isOn: isOpen, toggle: toggleOpen } = useToggle();
-	useEffect(
-		function resetValue() {
-			if (isOpen) return;
 
-			setSearchVal('');
-		},
-		[isOpen],
-	);
+	// useEffect(
+	// 	function resetValue() {
+	// 		if (isOpen) return;
+
+	// 	},
+	// 	[isOpen],
+	// );
 
 	const throttledOpen = useThrottle<void>(toggleOpen, 300);
 
@@ -25,13 +31,7 @@ function SearchPost() {
 			<AnimatePresence>
 				{isOpen && (
 					<AppearAnimation>
-						<Input
-							value={searchVal}
-							setValue={setSearchVal}
-							type="text"
-							className="mr-6"
-							placeholder="Search..."
-						/>
+						<SearchResults posts={posts} />
 					</AppearAnimation>
 				)}
 			</AnimatePresence>

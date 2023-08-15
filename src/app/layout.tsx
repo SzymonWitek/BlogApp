@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
 
 import { Navbar } from '@/components/UI';
+import { getPostsMetadata } from '@/features/BlogPosts/utils/getPostsMetadata';
 import './globals.css';
 
 const roboto = Roboto({
@@ -16,17 +17,18 @@ export const metadata: Metadata = {
 	description: 'Documentation blog for ui design system',
 };
 
-export default function RootLayout({
-	children,
-}: {
+interface RootLayoutProps {
 	children: React.ReactNode;
-}) {
+}
+
+const posts = getPostsMetadata();
+
+export default function RootLayout({ children }: RootLayoutProps) {
 	return (
 		<html lang="en">
 			<body
-				className={`${roboto.className} text-slate-500 min-h-screen bg-bgPrimary`}
-			>
-				<Navbar />
+				className={`${roboto.className} text-slate-500 min-h-screen bg-bgPrimary`}>
+				<Navbar posts={posts} />
 				{children}
 			</body>
 		</html>

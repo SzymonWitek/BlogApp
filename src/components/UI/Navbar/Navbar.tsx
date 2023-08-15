@@ -1,4 +1,5 @@
-import { SearchPost } from '@/components/SearchPost';
+import { getPostsMetadata } from '@/features/BlogPosts/utils/getPostsMetadata';
+import { SearchPost } from '@/features/SearchPost';
 import Link from 'next/link';
 
 const LINKS = [
@@ -6,14 +7,18 @@ const LINKS = [
 	{ name: 'Log in', href: '/login' },
 ];
 
-function Navbar() {
+interface NavbarProps {
+	posts: ReturnType<typeof getPostsMetadata>;
+}
+
+function Navbar({ posts }: NavbarProps) {
 	return (
 		<nav className="px-[5vw] py-9 lg:py-12 flex justify-between items-center">
 			<Link href="/">
 				<h2 className="text-gray-300 tracking-wide font-medium">DevBlog</h2>
 			</Link>
 			<div className="flex items-center">
-				<SearchPost />
+				<SearchPost posts={posts} />
 				<ul className="flex">
 					{LINKS.map(({ href, name }) => (
 						<Link className="ml-7" href={href} key={href}>

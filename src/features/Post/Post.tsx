@@ -23,7 +23,7 @@ function Post({ title }: PostProps) {
 	const { data, content } = getPostDetails(title);
 
 	return (
-		<div className="px-[10vw] flex flex-col items-center w-[1300]">
+		<div className="px-[10vw] flex flex-col items-center w-[1300] pt-4">
 			<PostHeader data={data} content={content} />
 			<div>
 				<Image
@@ -31,7 +31,7 @@ function Post({ title }: PostProps) {
 					width={1280}
 					height={1280}
 					alt=""
-					className="w-full h-[750px] pt-4 rounded-3xl"
+					className="w-full h-[750px] pt-5 rounded-3xl"
 				/>
 			</div>
 			<PostContent content={content} />

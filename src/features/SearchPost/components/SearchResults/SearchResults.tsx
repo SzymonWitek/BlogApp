@@ -26,7 +26,6 @@ function SearchResults({ posts }: SearchPostProps) {
 			post =>
 				post.title?.includes(searchVal) || post.subtitle?.includes(searchVal),
 		);
-		console.log(matchingPosts);
 		setResults(matchingPosts);
 	};
 
@@ -37,30 +36,27 @@ function SearchResults({ posts }: SearchPostProps) {
 			<div className="relative w-max">
 				<Combobox.Input
 					onChange={handleChange}
-					className={`bg-gray-500 px-5 py-2 rounded-3xl  border-2 border-gray-600 `}
+					className={`bg-gray-500 px-5 py-2 rounded-3xl mr-5`}
+					displayValue={() => searchVal}
 				/>
-				<Combobox.Options className="absolute bottom-[-130%] right-0 left-0 bg-textPrimary">
-					<Combobox.Option value="1">
-						<div>testowa wartosc</div>
-					</Combobox.Option>
-					<Combobox.Option value="2">
-						<Link href="/blog/qr-code-micro-app">
-							<div>testowa wartosc2</div>
-						</Link>
-					</Combobox.Option>
+				<Combobox.Options className="results absolute top-[130%] right-0 left-0 bg-gray-500  shadow-lg mr-5">
 					{results?.map(result => (
-						<Link href={`blog/${result.slug}`}>
-							<div>
-								{/* <Image
-									height={50}
-									width={50}
-									alt={result.title}
-									src={result.image}
-									props={}
-								/> */}
-								{result.title}
+						<Combobox.Option
+							onClick={() => {
+								return setSearchVal('');
+							}}
+							value={result.title}
+							className="border-b-2 border-gray-400  last:border-0 hover:bg-gray-600  "
+							as={Link}
+							href={`/blog/${result.slug}`}>
+							{/* <Link href={`blog/${result.slug}`}> */}
+							<div className=" py-2 w-[85%] mx-auto">
+								<p className="text-lg text-textPrimary truncate w-full">
+									{result.title}
+								</p>
 							</div>
-						</Link>
+							{/* </Link> */}
+						</Combobox.Option>
 					))}
 				</Combobox.Options>
 			</div>

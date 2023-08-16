@@ -41,4 +41,5 @@ module.exports = {
 		},
 	},
 	plugins: [],
+	variants: ['last'],
 };

@@ -1,6 +1,5 @@
 'use client';
-// import { useToggle } from '@/hooks/useToggle';
-// import { useEffect } from 'react';
+
 import { AppearAnimation } from '@/components/UI';
 import { useThrottle } from '@/hooks/useThrottle';
 import { useToggle } from '@/hooks/useToggle';
@@ -16,18 +15,10 @@ interface SearchPostProps {
 export function SearchPost({ posts }: SearchPostProps) {
 	const { isOn: isOpen, toggle: toggleOpen } = useToggle();
 
-	// useEffect(
-	// 	function resetValue() {
-	// 		if (isOpen) return;
-
-	// 	},
-	// 	[isOpen],
-	// );
-
 	const throttledOpen = useThrottle<void>(toggleOpen, 300);
 
 	return (
-		<div className="flex justify-center ">
+		<div className="flex justify-center">
 			<AnimatePresence>
 				{isOpen && (
 					<AppearAnimation>

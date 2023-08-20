@@ -30,7 +30,7 @@ function Post({ title }: PostProps) {
 					src={`/images/${data.image}`}
 					width={1280}
 					height={1280}
-					alt=""
+					alt={data.title}
 					className="w-full h-[min(80vh,750px)] mt-5 rounded-xl lg:rounded-[2rem]"
 				/>
 			</div>

@@ -3,6 +3,8 @@ import { Roboto } from 'next/font/google';
 
 import { Navbar } from '@/components/UI';
 import { getPostsMetadata } from '@/features/BlogPosts/utils/getPostsMetadata';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './globals.css';
 
 const roboto = Roboto({
@@ -30,6 +32,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
 				className={`${roboto.className} text-slate-500 min-h-screen bg-bgPrimary`}>
 				<Navbar posts={posts} />
 				{children}
+				<ToastContainer
+					toastClassName={
+						'relative flex mx-auto py-3 w-max min-h-10 rounded-md justify-between overflow-hidden cursor-pointer tracking-wide border-2 border-gray-800 bg-bgPrimary mb-2'
+					}
+				/>
 			</body>
 		</html>
 	);

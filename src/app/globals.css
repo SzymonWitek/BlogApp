@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+:root{
+  --toastify-color-dark: #002efc;
+  -toastify-text-color-dark: #fff;
+  --toastify-icon-color-success: #68d94a;
+}
 
 p,body{
   line-height: 1.25;

@@ -17,7 +17,7 @@ export const useGetTableFormat = (): Components & Options => {
 		},
 		table: ({ node, children, ...props }) => {
 			return (
-				<div className="mx-auto mb-5 mt-1 w-[900px]  overflow-auto">
+				<div className="mx-auto mb-5 mt-1 w-full max-w-[900px] overflow-auto">
 					<table className="w-[100%] border">{children}</table>
 				</div>
 			);

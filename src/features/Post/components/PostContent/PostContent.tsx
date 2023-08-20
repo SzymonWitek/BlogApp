@@ -43,7 +43,7 @@ function PostContent({ content }: PostContentProps) {
 	};
 
 	return (
-		<div className="w-[1200px] py-2">
+		<div className="w-full py-2">
 			<ReactMarkdown
 				components={componentsFormat}
 				remarkPlugins={[remarkGfm, remarkUnwrapImages]}>

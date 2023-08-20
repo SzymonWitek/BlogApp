@@ -59,13 +59,6 @@ Comparing it to actual retro console specs, it's somewhere between a [NES](https
 | **Colors**         | 16        | 128       | 52        |
 | **Cartridge Size** | 32 kB     | 4 kB      | 128 kB    |
 
-
-| Feature    | Support              |TEST  TESTSAFSAFSAFSAFSAFSAFSAFSATESTSAFSAFSAFSAFSAFSAFSAFSATESTSAFSAFSAFSAFSAFSAFSAFSA| TEST| TEST| TEST|
-| ---------: | :------------------- | ------------------------------------------------------------------------------------- | --- | --- | --- |
-| CommonMark | 100%                 |2                                                                                      |  3  |   4 |  4  |
-| GFM        | 100% w/ `remark-gfm` |45                                                                                     |  55 |  44 | 3   |
-
-
 ## Code examples
 
 Here's a couple of snippets of PICO-8 code to give you an idea of what development looks like.
@@ -113,12 +106,6 @@ PICO-8 detects user input via the `btn(k)` function, which returns true with the
 ![images/nes_controller](/images/classic_nes_controller.jpg)
 
 Adding this snippet to the rendering one above will allow us to move the character.
-
-```js
-function _update()
-  if btn(0) {console.log("test")}
-end
-```
 
 ![images/pico-8-movement](/images/pico-8-movement.gif)
 

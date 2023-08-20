@@ -12,7 +12,7 @@ export const useGetCodeFormat = (): Components => {
 				<div style={{ position: 'relative' }}>
 					<SyntaxHighlighter
 						{...props}
-						children={code}
+						// children={code}
 						style={atomDark}
 						language={match[1]}
 						PreTag="div"
@@ -23,8 +23,14 @@ export const useGetCodeFormat = (): Components => {
 							textAlign: 'right',
 							userSelect: 'none',
 						}}
-						customStyle={{ position: 'relative' }}
-					/>
+						customStyle={{
+							position: 'relative',
+							display: 'block',
+							width: '100%',
+							overflowX: 'auto',
+						}}>
+						{code}
+					</SyntaxHighlighter>
 					<div
 						style={{
 							position: 'absolute',
@@ -38,7 +44,15 @@ export const useGetCodeFormat = (): Components => {
 					<CopyBtn textToCopy={code} />
 				</div>
 			) : (
-				<code {...props} className={className}>
+				<code
+					{...props}
+					className={className}
+					style={{
+						position: 'relative',
+						display: 'block',
+						width: '100%',
+						overflowX: 'auto',
+					}}>
 					{children}
 				</code>
 			);

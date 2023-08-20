@@ -17,9 +17,9 @@ function ArticleCard({ data, isOdd }: ArticleCardProps) {
 	const outlineColor = isOdd ? 'outline-blue-500' : 'outline-yellow';
 
 	return (
-		<Link href={`/blog/${data.slug}`}>
+		<Link href={`/blog/${data.slug}`} className="mx-auto lg:mx-0">
 			<div
-				className={`rounded-md borderTest w-[370px] mb-12 pb-2 cursor-pointer h-full`}
+				className={`w-[min(90vw,425px)] rounded-md borderTest 2xl:w-[370px] mb-12 pb-2 lg:mx-2 cursor-pointer h-full`}
 				onMouseEnter={() => setHovered(true)}
 				onMouseLeave={() => {
 					setHovered(false);

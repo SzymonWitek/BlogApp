@@ -19,7 +19,7 @@ function ArticleCard({ data, isOdd }: ArticleCardProps) {
 	return (
 		<Link href={`/blog/${data.slug}`} className="mx-auto lg:mx-0">
 			<div
-				className={`w-[min(90vw,425px)] rounded-md borderTest 2xl:w-[370px] mb-12 pb-2 lg:mx-2 cursor-pointer h-full`}
+				className={`w-[min(90vw,425px)] rounded-md borderTest 2xl:w-[360px] mb-12 pb-2 lg:mx-2 cursor-pointer h-full`}
 				onMouseEnter={() => setHovered(true)}
 				onMouseLeave={() => {
 					setHovered(false);

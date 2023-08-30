@@ -5,7 +5,7 @@ function BlogPosts() {
 	const postsMetadata = getPostsMetadata();
 
 	return (
-		<div className="flex flex-wrap justify-between pt-8">
+		<div className="flex flex-wrap justify-between pt-8 min-h-[65vh]">
 			{postsMetadata.map((postMetadata, index) => (
 				<ArticleCard
 					data={postMetadata}

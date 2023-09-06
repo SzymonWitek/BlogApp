@@ -1,5 +1,6 @@
-import type { ToastOptions } from 'react-toastify';
 import { toast as showToast } from 'react-toastify';
+
+import type { ToastOptions } from 'react-toastify';
 
 const DEFAULT_OPTIONS = {
 	position: 'bottom-right',

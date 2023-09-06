@@ -18,12 +18,11 @@ export const options: NextAuthOptions = {
 				},
 			},
 			async authorize(credentials) {
-				// get data from db
+				//todo: get data from db
 				const USER = {
 					id: '42',
 					name: 'Admin',
 					password: 'admin123!',
-					// role: 'ADMIN',
 					role: 'USER',
 				};
 

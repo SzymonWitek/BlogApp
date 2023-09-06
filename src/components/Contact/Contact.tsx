@@ -25,6 +25,7 @@ function Contact() {
 			</div>
 			{LINKS.map(link => {
 				if (link?.isExternal) return renderLink(link);
+
 				return <p className={textStyle}>{link.text}</p>;
 			})}
 		</div>

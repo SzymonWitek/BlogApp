@@ -1,10 +1,11 @@
 'use client';
 
+import { AnimatePresence } from 'framer-motion';
+import { FaMagnifyingGlass } from 'react-icons/fa6';
+
 import { AppearAnimation } from '@/components/UI';
 import { useThrottle } from '@/hooks/useThrottle';
 import { useToggle } from '@/hooks/useToggle';
-import { AnimatePresence } from 'framer-motion';
-import { FaMagnifyingGlass } from 'react-icons/fa6';
 import { getPostsMetadata } from '../BlogPosts/utils/getPostsMetadata';
 import { SearchResults } from './components/SearchResults';
 

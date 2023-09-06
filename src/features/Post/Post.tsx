@@ -1,8 +1,9 @@
-import { POSTS_SOURCE } from '@/common/constants';
-import type { PostMetadata } from '@/common/interfaces';
 import fs from 'fs';
 import matter from 'gray-matter';
 import Image from 'next/image';
+
+import { POSTS_SOURCE } from '@/common/constants';
+import type { PostMetadata } from '@/common/interfaces';
 import { PostContent } from './components/PostContent';
 import { PostHeader } from './components/PostHeader';
 

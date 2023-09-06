@@ -1,6 +1,7 @@
+import Link from 'next/link';
+
 import { getPostsMetadata } from '@/features/BlogPosts/utils/getPostsMetadata';
 import { SearchPost } from '@/features/SearchPost';
-import Link from 'next/link';
 
 const LINKS = [
 	{ name: 'About', href: '/about' },

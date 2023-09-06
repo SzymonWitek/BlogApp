@@ -1,11 +1,13 @@
 'use client';
 
-import { getPostsMetadata } from '@/features/BlogPosts/utils/getPostsMetadata';
-import { Combobox } from '@headlessui/react';
 import fuzzy from 'fuzzy';
 import Link from 'next/link';
-import type { ChangeEvent } from 'react';
 import { useEffect, useState } from 'react';
+
+import { getPostsMetadata } from '@/features/BlogPosts/utils/getPostsMetadata';
+import { Combobox } from '@headlessui/react';
+
+import type { ChangeEvent } from 'react';
 
 interface SearchPostProps {
 	posts: ReturnType<typeof getPostsMetadata>;

@@ -1,13 +1,16 @@
 import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
+import { ToastContainer } from 'react-toastify';
 
 import { Navbar } from '@/components/UI';
 import { Footer } from '@/components/UI/Footer';
 import AuthProvider from '@/context/AuthProvider';
 import { getPostsMetadata } from '@/features/BlogPosts/utils/getPostsMetadata';
-import { ToastContainer } from 'react-toastify';
+
 import 'react-toastify/dist/ReactToastify.css';
 import './globals.css';
+
+//todo: add responsive layout
 
 const roboto = Roboto({
 	weight: ['300', '400', '500', '700', '900'],
@@ -31,7 +34,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
 	return (
 		<html lang="en">
 			<body
-				className={`${roboto.className} text-slate-500 min-h-screen bg-bgPrimary`}>
+				className={`${roboto.className} text-slate-500 min-h-screen bg-bgPrimary flex flex-col`}>
 				<AuthProvider>
 					<Navbar posts={posts} />
 					{children}

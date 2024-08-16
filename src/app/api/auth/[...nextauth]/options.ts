@@ -1,3 +1,4 @@
+import { ROLES } from '@/common/constants';
 import type { NextAuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 
@@ -23,7 +24,7 @@ export const options: NextAuthOptions = {
 					id: '42',
 					name: 'Admin',
 					password: 'admin123!',
-					role: 'USER',
+					role: ROLES.admin,
 				};
 
 				if (

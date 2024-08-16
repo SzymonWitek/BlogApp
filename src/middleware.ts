@@ -7,9 +7,7 @@ import { PATHS, ROLES } from './common/constants';
 export default withAuth(
 	function middleware(request: NextRequestWithAuth) {
 		const isAccessNotAllowed = checkIfNotAllowed.bind(null, request);
-		if (isAccessNotAllowed(PATHS.post)) {
-			return NextResponse.rewrite(new URL('/denied', request.url));
-		}
+	
 		if (isAccessNotAllowed(PATHS.login, ROLES.admin)) {
 			return NextResponse.rewrite(new URL(PATHS.denied, request.url));
 		}
@@ -21,4 +19,4 @@ export default withAuth(
 	},
 );
 
-export const config = { matcher: [PATHS.dashboard, PATHS.post] };
+export const config = { matcher: [PATHS.dashboard, PATHS.post] }; // TEMPORARY MATCHERS

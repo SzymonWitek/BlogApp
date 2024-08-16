@@ -24,7 +24,7 @@ function Post({ title }: PostProps) {
 	const { data, content } = getPostDetails(title);
 
 	return (
-		<div className="px-[8vw] md:px-[10vw] lg:px-[15vw] flex flex-col items-center w-full pt-4">
+		<div className="md:px-[10vw] lg:px-[15vw] max-w-[1625px] mx-auto flex flex-col items-center w-full pt-4">
 			<PostHeader data={data} content={content} />
 			<div className="w-full">
 				<Image
